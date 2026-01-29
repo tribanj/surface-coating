@@ -1,48 +1,87 @@
-/* styles/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* styles/globals.css - FIXED VERSION */
+/* For Vite with @tailwindcss/vite, use @import instead of @tailwind directives */
+@import "tailwindcss";
+@import "tailwindcss/preflight" layer(base);
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
+/* Custom base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #1f2937; /* text-gray-800 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom component classes */
+.container {
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Custom animations */
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
-  body {
-    @apply text-gray-800 antialiased;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@layer components {
-  .container {
-    @apply max-w-7xl mx-auto;
+/* Gradient text - Using regular CSS */
+.gradient-text {
+  background: linear-gradient(to right, #2563eb, #06b6d4); /* from-blue-600 to-cyan-500 */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glass effect - Using regular CSS */
+.glass-effect {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient animation */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
-@layer utilities {
-  /* Custom animations */
-  .animate-slideDown {
-    animation: slideDown 0.3s ease-out;
-  }
-  
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Gradient text */
-  .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent;
-  }
-  
-  /* Glass effect */
-  .glass-effect {
-    @apply backdrop-blur-md bg-white/10;
-  }
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 3s ease infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #06b6d4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #0891b2);
 }
