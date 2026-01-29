@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
-
+import machineImg from '../../assets/coating machine.webp';
 const MachineSlider = () => {
   const machines = [
     {
@@ -11,7 +11,7 @@ const MachineSlider = () => {
       category: "Booth Systems",
       description: "Automated powder application with 99.8% recovery efficiency",
       specs: ["Auto Powder Recovery", "PLC Control", "Energy Efficient"],
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200"
+      image: machineImg
     },
     {
       id: 2,

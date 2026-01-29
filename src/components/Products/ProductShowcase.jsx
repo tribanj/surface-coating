@@ -30,7 +30,7 @@ const ProductShowcase = ({ selectedCategory }) => {
       features: ['Auto Powder Recovery', 'PLC Control', 'Energy Efficient', 'Low Maintenance'],
       specs: { capacity: '500-2000 kg/hr', recovery: '99.8%', power: '15-30 HP' },
       image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12',
-      badge: 'BEST SELLER',
+    badge: 'Popular',
       badgeColor: 'bg-red-500'
     },
     {
